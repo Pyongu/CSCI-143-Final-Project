@@ -9,5 +9,5 @@ test-data.zip
 
 echo 'load normalized'
 for file in $files; do
-    python3 load_tweets.py --db "postgresql://hello_flask:hello_flask@db:5432/hello_flask_dev" --inputs "$file"
+    python3 load_tweets.py --db "psql --username=hello_flask --dbname=hello_flask_dev" --inputs "$file"
 done
