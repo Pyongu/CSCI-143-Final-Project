@@ -118,7 +118,7 @@ def insert_tweet(connection,tweet):
             INSERT INTO users (
                id_users,
                username,
-               password,
+               password
                 ) VALUES (
                 :id_users,
                 :username,
@@ -152,11 +152,11 @@ def insert_tweet(connection,tweet):
             INSERT INTO tweets (
                 id_tweets,
                 created_at,
-                text,
+                text
                 ) values (
                 :id_tweets,
                 :created_at,
-                :text,
+                :text
                 ) on conflict do nothing
             ''')
         res = connection.execute(sql, {
