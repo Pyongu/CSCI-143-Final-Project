@@ -20,4 +20,5 @@ CREATE TABLE tweets (
     text TEXT,
     created_at TIMESTAMPTZ
 );
+
 COMMIT;
