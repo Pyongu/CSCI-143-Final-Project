@@ -10,8 +10,8 @@ CREATE TABLE urls (
 );
 
 CREATE TABLE users (
-    id_users BIGINT PRIMARY KEY,
-    username text,
+    id_users BIGINT UNIQUE,
+    username text PRIMARY KEY,
     password text
 );
 
