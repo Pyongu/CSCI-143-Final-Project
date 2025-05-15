@@ -202,16 +202,16 @@ def search():
     with connection.begin() as trans:
             sql=sqlalchemy.sql.text('''
             SELECT 
-                id_users, 
+                username, 
                 created_at, 
                 TS_HEADLINE(message_text, q,
                     'StartSel="<font color=red><b>",
                     StopSel="</font></b>",
                     MaxFragments=10,
                     MinWords=5, MaxWords=10')
-            FROM 
-                tweets,
-                PLAINTO_TSQUERY(:search) as q
+            FROM tweets
+            JOIN users USING (id_users)
+            CROSS JOIN PLAINTO_TSQUERY(:search) AS q
             WHERE 
                 to_tsvector('english', message_text) @@ q
             ORDER BY 
