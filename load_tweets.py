@@ -151,18 +151,21 @@ def insert_tweet(connection,tweet):
         sql=sqlalchemy.sql.text(f'''
             INSERT INTO tweets (
                 id_tweets,
+                id_users,
                 created_at,
-                text
+                message_text
                 ) values (
                 :id_tweets,
+                :id_users,
                 :created_at,
-                :text
+                :message_text
                 ) on conflict do nothing
             ''')
         res = connection.execute(sql, {
             'id_tweets': tweet.get('id', None),
+            'id_users': tweet['user']['id'],
             'created_at': tweet.get('created_at', None),
-            'text': remove_nulls(text),
+            'message_text': remove_nulls(text)
             })
 
 ################################################################################

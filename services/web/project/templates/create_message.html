@@ -2,4 +2,17 @@
 
 {% block content %}
 <h2>Create Message Webpage</h2>
+
+<form action='/create_message' method="POST">
+    <table>
+        <tr>
+            <td>Message </td>
+            <td><input type=text name=message></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td> <input type=submit value='Create Message'></td>
+        </tr>
+     </table>
+</form>
 {% endblock%}

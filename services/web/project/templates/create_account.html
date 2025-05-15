@@ -11,6 +11,10 @@
 <p> Account already exists </p>
 {% endif %}
 
+{% if userName_exists %}
+<p> The username is taken </p>
+{% endif %}
+
 <form action='/create_account' method="POST">
     <table>
         <tr>

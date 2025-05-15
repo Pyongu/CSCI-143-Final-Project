@@ -2,4 +2,27 @@
 
 {% block content %}
 <h2>Search Webpage</h2>
+
+<form action='/search' methods='GET'>
+<input type=text name=search>
+<input type=submit value=Submit>
+</form>
+
+{% for tweet in tweets %}
+<table>
+    <tr>
+        <td><strong>User Id:</strong> {{tweet[0]}}</td>
+        <td><strong>Created At:</strong> {{tweet[1]}}</td>
+        <td><strong>Text: </strong>{{tweet[2] | safe }}</td>
+    </tr>
+</table>
+{% endfor %}
+{% set page = page | int %}
+
+{% if page  == 0 %}
+<a href="/search?search={{ search }}&page={{ page + 1 }}">Next</a>
+{% else %}
+<a href="/search?search={{ search }}&page={{ page - 1 }}">Previous</a>
+<a href="/search?search={{ search }}&page={{ page + 1 }}">Next</a>
+{% endif %}
 {% endblock%}

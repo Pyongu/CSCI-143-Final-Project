@@ -2,4 +2,22 @@
 
 {% block content %}
 <h2>Home Webpage</h2>
+
+{% for tweet in tweets %}
+<table>
+    <tr>
+        <td><strong>Username:</strong> {{tweet[0]}}</td>
+        <td><strong>Created At:</strong> {{tweet[1]}}</td>
+        <td><strong>Text: </strong>{{tweet[2]}}</td>
+    </tr>
+</table>
+{% endfor %}
+{% set page = page | int %}
+
+{% if page  == 0 %}
+<a href='/?page={{page+1}}'>Next</a> 
+{% else %}
+<a href='/?page={{page-1}}'>Previous</a> 
+<a href='/?page={{page+1}}'>Next</a>
+{% endif %}
 {% endblock%}
