@@ -2,3 +2,4 @@
 .env.prod
 __pycache__
 *.swp
+nohup.out
