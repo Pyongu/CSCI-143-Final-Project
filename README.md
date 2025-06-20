@@ -1,5 +1,5 @@
 # Twitter Clone
-[![](https://github.com/Pyongu/CSCI-143-Final-Project/actions/workflows/main.yml/badge.svg)](https://github.com/Pyongu/CSCI-143-Final-Project/actions/workflows/main.yml)
+[![](https://github.com/Pyongu/CSCI-143-Final-Project/actions/workflows/tests.yml/badge.svg)](https://github.com/Pyongu/CSCI-143-Final-Project/actions/workflows/tests.yml)
 # Overview
 
 This repository contains a simple Twitter clone — a CRUD web application built with Python, Flask, Jinja, PostgreSQL, Docker, Gunicorn, and Nginx. The project provides both development and production Docker containers, managed via a production-ready Docker Compose setup to streamline deployment and development workflows.
