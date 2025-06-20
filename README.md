@@ -1,8 +1,20 @@
+# Twitter Clone
+[![](https://github.com/Pyongu/CSCI-143-Final-Project/actions/workflows/main.yml/badge.svg)](https://github.com/Pyongu/CSCI-143-Final-Project/actions/workflows/main.yml)
 # Overview
 
-This repo containerizes a Flask application using Docker, PostgreSQL, Gunicorn, and Nginx. PostgreSQL is used as the database to store structured data. Gunicorn serves as the WSGI HTTP server to manage Flask in a production environment. Nginx is used as a reverse proxy to handle incoming requests and improve performance. Docker is used to containerize all components, ensuring portability and easy deployment. Included is a production-ready Docker Compose file that adds Gunicorn and Nginx to handle static and media files.
+This repository contains a simple Twitter clone — a CRUD web application built with Python, Flask, Jinja, PostgreSQL, Docker, Gunicorn, and Nginx. The project provides both development and production Docker containers, managed via a production-ready Docker Compose setup to streamline deployment and development workflows.
 
-![Gif](docker_flask_.gif)
+# Features
+
+- **Home**: Paginated feed (20 messages/page)
+
+- **Login/Logout**: Cookie-based session management
+
+- **Create User**: Sign-up form with password confirmation
+
+- **Create Message**: Authenticated message posting
+
+- **Search**: Full-text search using PostgreSQL RUM index
 
 # Build Instructions
 
